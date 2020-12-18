@@ -1,0 +1,70 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel ="stylesheet" href="{%static 'bootstrap/css/bootstrap-grid.css'%}">
+  <link rel ="stylesheet" href="{%static 'bootstrap/css/bootstrap.css'%}">
+  <link rel ="stylesheet" href="{%static 'style.css'%}">
+  </head>
+  <body>
+    <div class ="top-nav">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">SONG HIT PREDICTOR</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item ">
+          <a class="nav-link" href="#">GITHUB  <span class="sr-only">(current)</span></a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+  </div>
+  <div class="container hello">
+  <div class="row">
+    <form  method="post">
+        {% csrf_token %}
+    <div class="col-sm">
+      <div class="input-group input-group-sm mb-1">
+    <div class="input-group-prepend">
+    </div>
+     <!-- <label for="exampleInputEmail1">Email address</label> -->
+    <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Song Name" name="song">
+  </div>
+
+    </div>
+    <div class="col-sm">
+      <div class="input-group input-group-sm mb-1">
+    <div class="input-group-prepend">
+    </div>
+    <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Artist Name" name="Artist">
+  </div>
+  </div>
+  <div class="col-sm">
+  <button type="submit" class="btn btn-primary mb-2">search</button>
+</div>
+</form>
+</div>
+
+{% ifequal ans 1 %}
+
+<span class="label label-success"> {{song}} is HIT</span></br>
+<span class="label label-success">Try Another!!</span>
+
+{% endifequal %}
+{% ifequal  ans 0  %}
+<span class="label label-success">{{song}} NOT A HIT</span>
+<span class="label label-success">Try Another!!</span>
+{%endifequal %}
+
+
+</div>
+  </body>
+
+</html>
