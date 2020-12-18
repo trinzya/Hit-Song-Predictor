@@ -8,7 +8,7 @@ Spotify audio features:https://developer.spotify.com/documentation/web-api/refer
 artist_score -  This is the additional feature which denotes the whethter the songs is in billborad charts or not. <br>
 0 - dneoting not in the charts <br>
 1- denoting in the charts.<br>
-I tried various classification algorithms but logistic regresseion tends to perform the best. <br>
+I tried various classification algorithms with accuracy as the evaluation meteric <br>
 
 <br>
 
